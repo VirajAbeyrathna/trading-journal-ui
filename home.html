@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" />
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Glassmorphism Sidebar -->
+    <div class="fixed left-0 top-0 h-screen bg-gradient-to-b from-blue-50 via-white to-blue-100 shadow-xl rounded-r-xl transition-all duration-300 ease-in-out group w-[60px] hover:w-[220px] py-6 flex flex-col z-40">
+        <!-- Hamburger Menu Icon -->
+        <div class="p-4 flex items-center justify-start">
+            <button class="cursor-pointer" aria-label="Menu" title="Menu">
+                <!-- Heroicons Menu Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 text-sky-600 hover:text-sky-700 transition-colors duration-300">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <!-- Menu Items -->
+        <nav class="flex flex-col items-center justify-center flex-1 space-y-8 mt-4">
+            <div class="flex items-center gap-3 w-full px-4 py-2 hover:bg-blue-50 hover:rounded-md hover:scale-105 transition-all duration-300 ease-in-out">
+                <button class="w-6 h-6 flex items-center justify-center text-sky-600 hover:text-sky-700 transition-colors duration-300" aria-label="Home" title="Home">
+                    <!-- Home Icon (Heroicons) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M4.5 10.5V19a1.5 1.5 0 001.5 1.5h3A1.5 1.5 0 0010.5 19v-4.5h3V19a1.5 1.5 0 001.5 1.5h3A1.5 1.5 0 0019.5 19V10.5" />
+                    </svg>
+                </button>
+                <span class="hidden opacity-0 scale-95 group-hover:inline-flex group-hover:opacity-100 group-hover:scale-100 text-gray-700 hover:text-blue-700 font-medium text-sm transition-all duration-300">Home</span>
+            </div>
+            <div class="flex items-center gap-3 w-full px-4 py-2 hover:bg-blue-50 hover:rounded-md hover:scale-105 transition-all duration-300 ease-in-out">
+                <button class="w-6 h-6 flex items-center justify-center text-sky-600 hover:text-sky-700 transition-colors duration-300" aria-label="Trading" title="Trading">
+                    <!-- Chart Bar Icon (Heroicons) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v18h18" />
+                        <rect x="7" y="13" width="2" height="5" rx="1" fill="currentColor" />
+                        <rect x="11" y="9" width="2" height="9" rx="1" fill="currentColor" />
+                        <rect x="15" y="5" width="2" height="13" rx="1" fill="currentColor" />
+                    </svg>
+                </button>
+                <span class="hidden opacity-0 scale-95 group-hover:inline-flex group-hover:opacity-100 group-hover:scale-100 text-gray-700 hover:text-blue-700 font-medium text-sm transition-all duration-300">Trading</span>
+            </div>
+            <div class="flex items-center gap-3 w-full px-4 py-2 hover:bg-blue-50 hover:rounded-md hover:scale-105 transition-all duration-300 ease-in-out">
+                <button class="w-6 h-6 flex items-center justify-center text-sky-600 hover:text-sky-700 transition-colors duration-300" aria-label="Settings" title="Settings">
+                    <!-- Cog Icon (Heroicons) -->
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a9 9 0 0112.728 0m-12.728 0a9 9 0 000 12.728m12.728-12.728a9 9 0 010 12.728m-12.728 0a9 9 0 0012.728 0" />
+                    </svg>
+                </button>
+                <span class="hidden opacity-0 scale-95 group-hover:inline-flex group-hover:opacity-100 group-hover:scale-100 text-gray-700 hover:text-blue-700 font-medium text-sm transition-all duration-300">Settings</span>
+            </div>
+        </nav>
+    </div>
+    <!-- Top Menu Bar -->
+    <div class="fixed top-0 left-[60px] hover:left-[220px] w-[calc(100%-60px)] hover:w-[calc(100%-220px)] h-[70px] bg-white shadow-sm border-b border-gray-200 flex items-center justify-between px-4 md:px-8 z-50 transition-all duration-300 ease-in-out">
+        <div class="text-xl md:text-2xl font-semibold text-gray-800">Trading Journal</div>
+        <div class="flex items-center gap-4">
+            <span class="text-gray-700 font-medium">John Doe</span>
+            <div class="relative group">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="w-8 h-8 rounded-full border border-gray-300 shadow-sm cursor-pointer transition-colors duration-200" />
+                <div class="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-md shadow-lg py-2 text-sm text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">Profile</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">Settings</a>
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pt-[80px]"></div>
+    <div class="ml-[60px] hover:ml-[220px] transition-all duration-300 ease-in-out">
+        <!-- Main content goes here -->
+    </div>
+</body>
+</html>
