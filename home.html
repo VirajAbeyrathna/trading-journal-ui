@@ -12,7 +12,7 @@
 </head>
 <body class="bg-gray-100">
     <!-- Glassmorphism Sidebar -->
-    <div class="fixed left-0 top-0 h-screen bg-gradient-to-b from-blue-50 via-white to-blue-100 shadow-xl rounded-r-xl transition-all duration-300 ease-in-out group w-[60px] hover:w-[220px] py-6 flex flex-col z-40">
+    <div class="group/sidebar fixed left-0 top-0 h-screen bg-gradient-to-b from-blue-50 via-white to-blue-100 shadow-xl rounded-r-xl transition-all duration-300 ease-in-out w-[60px] hover:w-[220px] py-6 flex flex-col z-40">
         <!-- Hamburger Menu Icon -->
         <div class="p-4 flex items-center justify-start">
             <button class="cursor-pointer" aria-label="Menu" title="Menu">
@@ -31,7 +31,7 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l9-9 9 9M4.5 10.5V19a1.5 1.5 0 001.5 1.5h3A1.5 1.5 0 0010.5 19v-4.5h3V19a1.5 1.5 0 001.5 1.5h3A1.5 1.5 0 0019.5 19V10.5" />
                     </svg>
                 </button>
-                <span class="hidden opacity-0 scale-95 group-hover:inline-flex group-hover:opacity-100 group-hover:scale-100 text-gray-700 hover:text-blue-700 font-medium text-sm transition-all duration-300">Home</span>
+                <span class="hidden opacity-0 scale-95 group-hover/sidebar:inline-flex group-hover/sidebar:opacity-100 group-hover/sidebar:scale-100 text-gray-700 hover:text-blue-700 font-medium text-sm transition-all duration-300">Home</span>
             </div>
             <div class="flex items-center gap-3 w-full px-4 py-2 hover:bg-blue-50 hover:rounded-md hover:scale-105 transition-all duration-300 ease-in-out">
                 <button class="w-6 h-6 flex items-center justify-center text-sky-600 hover:text-sky-700 transition-colors duration-300" aria-label="Trading" title="Trading">
@@ -43,7 +43,7 @@
                         <rect x="15" y="5" width="2" height="13" rx="1" fill="currentColor" />
                     </svg>
                 </button>
-                <span class="hidden opacity-0 scale-95 group-hover:inline-flex group-hover:opacity-100 group-hover:scale-100 text-gray-700 hover:text-blue-700 font-medium text-sm transition-all duration-300">Trading</span>
+                <span class="hidden opacity-0 scale-95 group-hover/sidebar:inline-flex group-hover/sidebar:opacity-100 group-hover/sidebar:scale-100 text-gray-700 hover:text-blue-700 font-medium text-sm transition-all duration-300">Trading</span>
             </div>
             <div class="flex items-center gap-3 w-full px-4 py-2 hover:bg-blue-50 hover:rounded-md hover:scale-105 transition-all duration-300 ease-in-out">
                 <button class="w-6 h-6 flex items-center justify-center text-sky-600 hover:text-sky-700 transition-colors duration-300" aria-label="Settings" title="Settings">
@@ -52,28 +52,59 @@
                         <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a9 9 0 0112.728 0m-12.728 0a9 9 0 000 12.728m12.728-12.728a9 9 0 010 12.728m-12.728 0a9 9 0 0012.728 0" />
                     </svg>
                 </button>
-                <span class="hidden opacity-0 scale-95 group-hover:inline-flex group-hover:opacity-100 group-hover:scale-100 text-gray-700 hover:text-blue-700 font-medium text-sm transition-all duration-300">Settings</span>
+                <span class="hidden opacity-0 scale-95 group-hover/sidebar:inline-flex group-hover/sidebar:opacity-100 group-hover/sidebar:scale-100 text-gray-700 hover:text-blue-700 font-medium text-sm transition-all duration-300">Settings</span>
             </div>
         </nav>
     </div>
     <!-- Top Menu Bar -->
-    <div class="fixed top-0 left-[60px] hover:left-[220px] w-[calc(100%-60px)] hover:w-[calc(100%-220px)] h-[70px] bg-white shadow-sm border-b border-gray-200 flex items-center justify-between px-4 md:px-8 z-50 transition-all duration-300 ease-in-out">
-        <div class="text-xl md:text-2xl font-semibold text-gray-800">Trading Journal</div>
-        <div class="flex items-center gap-4">
-            <span class="text-gray-700 font-medium">John Doe</span>
+    <div class="fixed top-0 left-0 w-full h-[70px] flex items-center justify-between px-6 z-40 sidebar-menu-bar bg-white/30 backdrop-blur-md shadow-md border-b border-white/20 transition-all duration-300 font-sans">
+        <div class="flex items-center">
+            <!-- Optional Logo -->
+            <svg class="mr-3 w-6 h-6 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="white" />
+                <path d="M8 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span class="text-2xl font-bold tracking-wide text-gray-900">Trading Journal</span>
+        </div>
+        <div class="flex items-center gap-3">
+            <!-- Theme Toggle -->
+            <button class="w-8 h-8 flex items-center justify-center rounded-full border border-white/30 bg-white/10 shadow hover:bg-white/20 transition-all duration-200 hover:scale-105" title="Toggle Theme">
+                <!-- Moon Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-sky-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" />
+                </svg>
+            </button>
+            <span class="text-sm text-gray-800 font-medium">John Doe</span>
             <div class="relative group">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="w-8 h-8 rounded-full border border-gray-300 shadow-sm cursor-pointer transition-colors duration-200" />
-                <div class="absolute right-0 mt-2 w-32 bg-white border border-gray-200 rounded-md shadow-lg py-2 text-sm text-gray-700 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">Profile</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">Settings</a>
-                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 transition-colors duration-200">Logout</a>
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="w-8 h-8 rounded-full object-cover border border-white shadow cursor-pointer transition-transform duration-200 hover:scale-105" />
+                <div class="absolute right-0 mt-2 w-36 bg-white/80 border border-white/30 rounded-md shadow-lg py-2 text-sm text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none group-hover:pointer-events-auto">
+                    <a href="#" class="block px-4 py-2 rounded hover:bg-white/20 transition-colors duration-200">Profile</a>
+                    <a href="#" class="block px-4 py-2 rounded hover:bg-white/20 transition-colors duration-200">Settings</a>
+                    <a href="#" class="block px-4 py-2 rounded hover:bg-white/20 transition-colors duration-200">Logout</a>
                 </div>
             </div>
         </div>
     </div>
     <div class="pt-[80px]"></div>
-    <div class="ml-[60px] hover:ml-[220px] transition-all duration-300 ease-in-out">
+    <div class="main-content transition-all duration-300 ease-in-out">
         <!-- Main content goes here -->
     </div>
+    <style>
+        /* Pure CSS solution for dynamic connection */
+        .group\/sidebar:hover ~ .sidebar-menu-bar {
+            margin-left: 220px !important;
+            width: calc(100% - 220px) !important;
+        }
+        .group\/sidebar:hover ~ .main-content {
+            margin-left: 220px !important;
+        }
+        .sidebar-menu-bar {
+            margin-left: 60px;
+            width: calc(100% - 60px);
+        }
+        .main-content {
+            margin-left: 60px;
+        }
+    </style>
 </body>
 </html>
